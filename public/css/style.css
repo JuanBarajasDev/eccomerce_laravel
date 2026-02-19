@@ -23,26 +23,40 @@ input{
 padding: 1px;
 padding-left: 5px;
 }
+
+/* CAMBIO: Color de botones a un rojo intenso, evocando la carne. */
 .btn-2{
     list-style: none;
-    background-color: #111111;
+    background-color: #B22222; /* Rojo Ladrillo */
     color: #FFFFFF;
     display: inline-block;
     cursor: pointer;
     padding: 8px 11px;
     border-radius: 5px;
     font-size: 15px;
+    transition: background-color 0.3s ease;
+}
+.btn-2:hover {
+    background-color: #8B0000; /* Rojo Oscuro */
 }
 
+/* CAMBIO: Color de botones a un rojo intenso. */
 .btn-1{
     display: inline-block;
     padding: 11px 25px;
-    background-color: #111111;
+    background-color: #B22222; /* Rojo Ladrillo */
     color: #FFFFFF;
     border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
+.btn-1:hover {
+    background-color: #8B0000; /* Rojo Oscuro */
+}
+
 body{
     font-family: 'Poppins', sans-serif; 
+    /* CAMBIO: Color de fondo general a un tono pergamino/papel de carnicero. */
+    background-color: #F5F2E9; 
 }
 option {
     font-size: 16px;
@@ -56,20 +70,20 @@ img{
 .container{
     max-width: 1200px;
     margin: 0 auto;
-
 }
 
 .header{
     display: flex;
     align-items: center;
     min-height: 80vh;
-    background-color: #f5f5f5;
+    /* CAMBIO: Color de fondo del header a tono pergamino. */
+    background-color: #F5F2E9;
     padding: 70px 0;
-  
 }
 .menu{
     position: fixed;
-    background-color: #f5f5f5;
+    /* CAMBIO: Color de fondo del menú a tono pergamino. */
+    background-color: #F5F2E9;
     top: 0;
     left: 0;
     right: 0;
@@ -77,38 +91,37 @@ img{
     max-width: 1298px;
     align-items: center;
     justify-content: space-between;
+    z-index: 1000; /* Asegura que el menú esté por encima de otros elementos */
 }
 .logo{
     font-size: 25px;
-    color: rgb(250, 168, 14);
+    /* CAMBIO: Color del logo a un marrón oscuro, como madera. */
+    color: #4E342E;
     text-transform: uppercase;
     font-weight: 800;
     padding-left: 40px;
 }
 
 .menu .navbar ul li{
-
     position: relative;
     float: left;
 }
 
 .menu .navbar ul li a {
-
     font-size: 18px;
     padding: 20px;
-    color: #111111;
-   display: block;
-    
+    /* CAMBIO: Color de texto del menú a un color oscuro para contraste. */
+    color: #3D2B1F;
+    display: block;  
 }
 .navbar{
     padding-right: 60px;
 }
 .botonera {
     display: flex;
-    justify-content: space-between; /* Distribuye los botones a los extremos */
-    width: 100%; /* Asegura que ocupe todo el ancho del contenedor */
+    justify-content: space-between;
+    width: 100%;
 }
-
 
 #menu{
     display: none;
@@ -124,83 +137,86 @@ img{
 .submenu{
     position: relative;
     padding-right: 40px;
-   
 }
 
 .submenu #carrito{
     display: none;
 } 
 
-
 .submenu:hover #carrito {
     display: block;
     position: absolute;
     right: 0;
-    backdrop-filter: blur(100px);
+    backdrop-filter: blur(10px);
     top: 100%;
     z-index: 1;
-    background-color: #4e4b5076;
+    /* CAMBIO: Fondo del carrito a un marrón oscuro semi-transparente. */
+    background-color: rgba(78, 52, 46, 0.85);
     padding: 30px;
     min-width: 400px;
     max-height: 550px;
     overflow: auto;
+    border-radius: 0 0 8px 8px;
 }
-
 
 td.cantidad {
     width: 100%;
     min-width: 150px;
-    text-align: center; /* Asegura alineación */
+    text-align: center;
 }
 
 .cantidad {
     display: flex;
-    align-items: center; /* Centra verticalmente */
-    justify-content: center; /* Centra horizontalmente */
-    gap: 10px; /* Espacio entre los elementos */
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
     width: 100%;
-    white-space: nowrap; /* Evita que los elementos se vayan a otra línea */
+    white-space: nowrap;
 }
 
 .cantidad i {
-    font-size: 16px; /* Ajusta el tamaño de las flechas */
-    cursor: pointer; /* Hace que se vean clickeables */
+    font-size: 16px;
+    cursor: pointer;
 }
 
 .cantidad p {
     margin: 0;
-    min-width: 10px; /* Asegura que tenga espacio */
+    min-width: 10px;
     text-align: center;
-    display: inline-block; /* Evita que se comporte como bloque */
+    display: inline-block;
     font-family: Arial, Helvetica, sans-serif;
 }
 .cantidad {
-    margin-top: 20px; /* Ajusta según lo necesites */
+    margin-top: 20px;
 }
 td.cantidad {
-    padding-top: 8px; /* Aumenta para bajar los elementos */
+    padding-top: 8px;
 }
  
 #lista-carrito th, #lista-carrito td {
-    text-align: center;  /* Centra el texto en las celdas */
-    vertical-align: middle; /* Asegura que las celdas estén alineadas verticalmente */
-    padding-left: 10px; /* Espaciado interno */
+    text-align: center;
+    vertical-align: middle;
+    padding-left: 10px;
 }
 
-
+/* CAMBIO: Color de botones a rojo intenso. */
 button {
     transform: none;
     box-shadow: none;
     outline: none;
     border: none;
     list-style: none;
-    background-color: #111111;
+    background-color: #B22222; /* Rojo Ladrillo */
     color: #FFFFFF;
     display: inline-block;
     cursor: pointer;
     padding: 10px 11px;
     border-radius: 5px;
     font-size: 15px;
+    transition: background-color 0.3s ease;
+}
+button:hover {
+    background-color: #8B0000; /* Rojo Oscuro */
 }
 
 .agregar-carrito.disabled {
@@ -230,11 +246,11 @@ th, td{
 }
 .order {
    display: block;
-  width: 80%;
+   width: 80%;
 }
 
 .order h1{
-    color: #111111;
+    color: #3D2B1F;
     font-family: 'Oswald', sans-serif;
     font-size: 30px;
     text-align: left;
@@ -242,7 +258,7 @@ th, td{
 }
 
 .order th, td{
-color: #111111
+    color: #111111
 }
 #logo-orden {
     margin-right: 10%;
@@ -250,7 +266,6 @@ color: #111111
     width: 20vh;
 }
 #order-total {
-
     text-align: right;
     margin-right: 20%;
 }
@@ -288,28 +303,28 @@ input {
     border: 1px solid #9e9e9e;   
 }
 
-
+/* CAMBIO: Botón de borrar a rojo intenso. */
 .borrar {
-    background-color: #111111;
+    background-color: #B22222;
     border-radius: 50%;
     padding: 5px 10px;
     text-decoration: none;
     color: #FFFFFF;
     font-weight: 800;
     cursor: pointer;
-    
+    transition: background-color 0.3s ease;
+}
+.borrar:hover {
+    background-color: #8B0000;
 }
 .sin-stock {
-   
-        background-color: #585656dc;
-        border-radius: 50%;
-        padding: 5px 10px;
-        text-decoration: none;
-        color: #FFFFFF;
-        font-weight: 800;
-        cursor: pointer;
-        
-    
+    background-color: #585656dc;
+    border-radius: 50%;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: 800;
+    cursor: pointer;
 }
 
 .header-content{
@@ -326,13 +341,12 @@ input {
 .header-txt{
     flex-direction: 50%;
     text-align: center;
-
 }
 .header-txt h1{
     font-size: 90px;
     text-transform: uppercase;
     line-height: 1;
-    color: #111111;
+    color: #3D2B1F; /* Marrón Oscuro */
     font-family: 'Oswald', sans-serif;
     margin-bottom: 15px;
 }
@@ -340,27 +354,29 @@ input {
     font-size: 20px;
     text-transform: uppercase;
     margin-bottom: 20px;
+    color: #4E342E;
 }
 
 .ofert {
     padding: 20px 0 0 0 ;
     display: flex;
     justify-content: space-between;
-
 }
 
 .ofert-1{
     display: flex;
     align-items: center;
     flex-basis: calc(33.3% - 15px);
-    background-color: #f5f5f5;
+    /* CAMBIO: Color de fondo a un beige más claro, para resaltar. */
+    background-color: #FFFBF0;
     padding: 35px;
+    border: 1px solid #E0DACA;
+    border-radius: 8px;
 }
 .ofert-img{
     flex-basis: 50%;
     margin-right: 15px;
 }
-
 
 .ofert-img img {
     width: 250px;
@@ -371,29 +387,26 @@ input {
     text-align: center
 }
 .ofert-txt h3 {
-    color: #111111;
+    color: #3D2B1F;
     font-family: 'Oswald', sans-serif;
     font-size: 25px;
     text-transform: uppercase;
     margin-bottom: 15px;
-
 }
 
 .productos {
     padding: 50px 0;
     text-align: center;
-    
 }
 .productos h2{
-    color: #111111;
+    color: #3D2B1F;
     font-family: 'Oswald', sans-serif;
     font-size: 50px;
     text-transform: uppercase;
     margin-bottom: 50px;
-
 }
 .order h2{
-    color: #111111;
+    color: #3D2B1F;
     font-family: 'Oswald', sans-serif;
     font-size: 50px;
     text-transform: none;
@@ -404,17 +417,19 @@ input {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap : 50px;
-
 }
 .titleC{
     font-size: 35px;
     padding: 40px;
     text-align: left;
+    color: #3D2B1F;
 }
 .product {
     text-align: center;
     padding: 30px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+    background-color: #FFFFFF; /* Fondo blanco para las tarjetas de producto */
+    border-radius: 8px;
 }
 
 .product img {
@@ -423,9 +438,9 @@ input {
     margin-bottom: 20px;
 }
 
-.prodcut h3 {
+.product h3 {
     font-size: 20px;
-    color: #111111;
+    color: #3D2B1F;
     font-family: 'Oswald', sans-serif; 
     text-transform: uppercase;
     margin-bottom: 15px;
@@ -433,19 +448,19 @@ input {
 
 .product p, .precio {
     font-size: 20px;
-    color: #111111;
+    color: #4E342E;
     margin-bottom: 15px;
 }
 
 .precio {
     font-weight: 800;
+    color: #B22222; /* El precio en rojo para destacar */
 }
 
 .icons {
     padding: 50px 0 100px 0;
     display: flex;
     justify-content: space-between;
-
 }
 .icon-1{
     flex-basis : calc(33.3% - 30px);
@@ -453,67 +468,65 @@ input {
     align-items: center;
     justify-content: space-between;
     padding: 25px;
-    background-color: #f5f5f5;
-    
+    background-color: #FFFBF0; /* Mismo color que las ofertas */
+    border: 1px solid #E0DACA;
+    border-radius: 8px;
 }
 
 .icon-text h3 {
     font-size: 20px;
-    color: #111111;
+    color: #3D2B1F;
     font-family: 'Oswald' , sans-serif;
     text-transform: uppercase;
 }
 .icon-text p {
     font-size: 16px;
-    color: #111111;
-   
+    color: #4E342E;
 }
 
 .blog {
     display: flex;
     justify-content: space-between;
     padding-bottom: 100px;
-
 }
 
 .blog-1 {
     flex-basis: calc(33.3% - 30px);
-
 }
 
 .blog-1 img {
     margin-bottom: 20px;
+    border-radius: 8px;
 }
 
 .blog-1 h3 {
     font-size: 20px; 
-    color: #111111;
+    color: #3D2B1F;
     font-family: 'Oswald' , sans-serif;
     text-transform: uppercase;
     margin-bottom: 15px;
 }
 .blog-1 p{
     font-size: 16px;
-    color: #111111;
+    color: #4E342E;
 }
 
 footer{
     padding: 50px 0;
-    background-color: #111111;
+    /* CAMBIO: Footer a un marrón muy oscuro. */
+    background-color: #3D2B1F;
 }
 .footer-content {
     display: flex;
     justify-content: center;
-
 }
 
 .link h3{
     font-size: 18px;
-    color: #FFFFFF;
+    color: #F5F2E9; /* Texto claro para el footer */
     font-family: 'Oswald' , sans-serif;
     text-transform: uppercase;
     margin-bottom: 20px;
-
 }
 
 .link a {
@@ -523,59 +536,51 @@ footer{
     margin-bottom: 10px;
 }
 
-
 .submenu i {
-    font-size: 25px; /* Cambia "3rem" al tamaño que prefieras */
+    font-size: 25px;
     cursor: pointer;
-   
+    color: #3D2B1F;
 }
 .menu label {
-    color: #111111;
+    color: #3D2B1F;
     font-size: 25px;
 }
 
 #notificacion {
-    display: none; /* Oculto por defecto */
+    display: none;
     position: fixed;
     top: 20px;
     right: 120px;
-    background-color: #4caf50; /* Verde para éxito */
+    background-color: #4caf50;
     color: white;
     padding: 5px;
     border-radius: 5px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000; /* Para estar encima de otros elementos */
-    opacity: 0; /* Inicialmente transparente */
-    transition: opacity 0.5s ease-in-out; /* Transición para que aparezca/desaparezca suavemente */
-    
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }
 
-
 .a-deshabilitado {
-    pointer-events: none;  /* Evita que se haga clic */
-    cursor: not-allowed;  /* Cambia el cursor */
+    pointer-events: none;
+    cursor: not-allowed;
     list-style: none;
-    background-color: #111111;
-    color: #FFFFFF;
+    background-color: #8B0000; /* Un rojo más oscuro para deshabilitado */
+    color: #cccccc;
     display: inline-block;
     padding: 8px 11px;
     border-radius: 5px;
     font-size: 15px;
 }
 
-
-
 @media (max-width:958px){
 
     .menu {
-        
         padding: 20px;
-        
     }
 
     .menu label {
         display: initial;
-
     }
     
     .menu .navbar{
@@ -583,19 +588,17 @@ footer{
         top: 100%;
         left: 0;
         right: 0;
-        background-color: #181818;
+        /* CAMBIO: Fondo del menú móvil a marrón oscuro */
+        background-color: #3D2B1F;
         display: none;
-
     }
     .menu .navbar ul li {
         width: 100%;
-
     }
 
     .menu .navbar ul li a {
-        color: #FFFFFF;
+        color: #F5F2E9; /* Texto claro */
     }
-  
 
     #menu:checked~.navbar{
         display: initial;
@@ -613,32 +616,29 @@ footer{
         padding-right: 10px;
     }
     .submenu:hover #carrito {
-       
-            position: fixed;
-            top: 60px; /* o ajustá según tu header */
-            left: 0;
-            right: 0;
-            width: 100%;
-            height: auto;
-            max-height: 80vh;
-            
-            padding: 20px;
-            overflow-y: auto;
-            z-index: 1000;
-            
-            box-sizing: border-box;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: auto;
+        max-height: 80vh;
+        padding: 20px;
+        overflow-y: auto;
+        z-index: 1000;
+        box-sizing: border-box;
     }
- .remover-nombre {
-    display: none;
- }
+   .remover-nombre {
+       display: none;
+   }
 
- #carrito.activo {
-    display: block;
- }
- .form-group {
-    display: flex;
-    flex-direction: column;
- }
+   #carrito.activo {
+       display: block;
+   }
+   .form-group {
+       display: flex;
+       flex-direction: column;
+   }
 
     .header-content{
         padding: 50px 0;
@@ -705,3 +705,23 @@ footer{
         text-align: center;
     }
 }
+
+    .icon-img img {
+        width: 80px;
+        padding-right: 12px;
+    }
+
+
+
+
+
+
+    #contacto{
+    font-size: 16px;
+    color: #DCDCDC;
+    display: block;
+    margin-bottom: 10px;
+    margin-left: 120px;
+    flex-direction: column;
+    padding: 30px;
+    }

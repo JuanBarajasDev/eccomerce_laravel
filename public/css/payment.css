@@ -1,26 +1,260 @@
-#paymentModal {
-    border-radius: 15px;
-    border: none;
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    width: 80vh;
-    max-width: 90vw;
-    transform: translate(-50%, -50%);
-    padding-top: 60px;
-    padding-bottom: 20px;
-    box-sizing: border-box;
-   
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+/* ========================================================= */
+/* Estilos Globales y Contenedor Principal */
+/* ========================================================= */
+body {
+    /* Gradiente suave como fondo, más fresco que un color sólido */
+    background: linear-gradient(135deg, #f0f0f0 0%, #fffafa 100%); 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
 }
 
-#partPay{
+.product-content {
     display: flex;
-    padding-top: 20px;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    gap: 15px;
+    align-items: flex-start; 
+    padding: 60px 20px;
+    gap: 40px; 
+    max-width: 1400px; /* Más ancho */
+    margin: 0 auto;
+}
+
+/* ========================================================= */
+/* Contenedor Principal de la Orden y Estructura */
+/* ========================================================= */
+.order {
+    background-color: transparent; /* Quitamos el fondo para que las secciones se vean separadas */
+    padding: 0;
+    width: 100%;
+    display: flex;
+    gap: 40px;
+    /* La sección de envío ocupa más espacio que el resumen */
+    grid-template-columns: 2fr 1fr; 
+}
+
+/* --------------------------------------------------------- */
+/* Columna del Formulario (Principal) */
+/* --------------------------------------------------------- */
+.order-address-container {
+    flex: 2; /* Ocupa 2/3 del espacio */
+    background-color: #ffffff;
+    padding: 40px 50px;
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+#logo-orden {
+    max-width: 160px;
+    margin-bottom: 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -40px;
+    height: 100px;
+    width: 120px;
+}
+
+.order h2 {
+    font-size: 32px;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #f0f0f0;
+}
+
+.order-address h1 {
+    font-size: 24px;
+    color: #B22222; /* Título de la sección de formulario */
+    margin-top: 30px;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+
+/* --------------------------------------------------------- */
+/* Columna de Resumen de Orden (Flotante/Sticky) */
+/* --------------------------------------------------------- */
+.order-details-container {
+    flex: 1; /* Ocupa 1/3 del espacio */
+    position: sticky; /* Hacemos que la sección de resumen se mantenga visible */
+    top: 60px; /* Distancia desde la parte superior de la ventana */
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(178, 34, 34, 0.1); /* Sombra acentuada con el color principal */
+    max-height: calc(100vh - 120px); /* Para evitar desbordamiento */
+    overflow-y: auto; /* Permite scroll si hay muchos productos */
+}
+
+.order-details-container h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+
+/* ========================================================= */
+/* Formularios, Tablas y Total */
+/* ========================================================= */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #555;
+    font-size: 14px;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus, .form-group select:focus {
+    border-color: #B22222; 
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(178, 34, 34, 0.15);
+}
+
+.order-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px; /* Espacio entre filas */
+}
+
+.order-table th, .order-table td {
+    padding: 8px 0;
+    border-bottom: none; 
+    text-align: left;
+    font-size: 14px;
+}
+
+.order-table th {
+    color: #888;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+#order-total {
+    font-size: 28px;
+    font-weight: 700;
+    color: #B22222; /* Rojo Ladrillo */
+    margin-top: 30px;
+    text-align: right;
+    width: 100%;
+    padding-top: 20px;
+    border-top: 2px dashed #f0f0f0; /* Separador más moderno */
+}
+
+
+/* ========================================================= */
+/* Acciones y Botones */
+/* ========================================================= */
+.order-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid #eee;
+}
+
+.order-actions p {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 17px;
+    transition: color 0.3s;
+    text-decoration: none; /* Asegura que no haya subrayado */
+}
+
+.order-actions p:first-child {
+    color: #888;
+}
+
+.order-actions p:first-child:hover {
+    color: #555;
+}
+
+#pagoHecho {
+    background-color: #B22222; 
+    color: #ffffff !important;
+    padding: 15px 30px;
+    border-radius: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(178, 34, 34, 0.3);
+}
+
+#pagoHecho:hover {
+    background-color: #8B0000;
+    transform: translateY(-2px);
+}
+
+
+/* ========================================================= */
+/* Modal de Pago */
+/* ========================================================= */
+#paymentModal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    z-index: 9999;
+    border-radius: 20px;
+    border: none;
+    padding: 40px;
+    max-width: 700px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+#payButton {
+    margin-top: 20px;
+    background-color: #B22222 !important; 
+    border-radius: 10px !important;
+    padding: 15px 20px !important;
+    font-size: 18px;
+    width: 100% !important;
+    box-shadow: 0 3px 8px rgba(178, 34, 34, 0.4);
+}
+
+#closeModal {
+    border: 1px solid #B22222;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    background-color: #B22222;
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+/* Media Query para Móviles: Apilar elementos */
+@media (max-width: 992px) {
+    .order {
+        flex-direction: column;
+    }
+
+    .order-details-container {
+        position: static; /* Deshabilita el sticky en móvil */
+        max-height: none;
+        overflow-y: visible;
+        order: -1; /* Mueve el resumen arriba del formulario en móvil */
+    }
+
+    .order-address-container {
+        padding: 30px 20px;
+    }
 }

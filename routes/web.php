@@ -4,6 +4,7 @@ use App\Http\Controllers\admin\adminController;
 use App\Http\Controllers\admin\adminProductAttributeController;
 use App\Http\Controllers\admin\adminProductController;
 use App\Http\Controllers\DireccionController;
+use App\Http\Controllers\admin\HistorialCompraController;
 use App\Http\Controllers\NotificacionController;
 use App\Http\Controllers\PedidosController;
 use App\Http\Controllers\ProductoController;
@@ -26,7 +27,7 @@ Route::middleware(['auth', 'verified','rolemanager:admin'])->group(function () {
     Route::prefix('admin')->group(function () {
         Route::controller(adminController::class)->group(function () {
             Route::get('/dashboard', 'index')->name('admin');
-            Route::get('/dashboard/settings', 'settings')->name('settings');
+
 
         });
         Route::controller(adminProductController::class)->group(function () {
@@ -40,6 +41,10 @@ Route::middleware(['auth', 'verified','rolemanager:admin'])->group(function () {
         Route::controller(adminProductAttributeController::class)->group(function () {
             Route::get('/productAttribute/create', 'index')->name('productAttribute.create');
             Route::get('/productAttribute/manage', 'manage')->name('productAttribute.manage');
+            
+        });
+            Route::controller(HistorialCompraController::class)->group(function () {
+            Route::get('/pedidos/historial', 'index')->name('order.history');
             
         });
     

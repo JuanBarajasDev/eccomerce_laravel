@@ -37,11 +37,11 @@ llamarProductos()
 
 function organizar_categoria () {
 
-    let clasico = productos.filter(p => p.category === "clasico");
+    let clasico = productos.filter(p => p.category === "carne-res");
     productosFrontEnd(clasico, "product-cards-clasico")
-    let teconologia = productos.filter(p => p.category === "tecnologia");
+    let teconologia = productos.filter(p => p.category === "carne-cerdo");
     productosFrontEnd(teconologia, "product-cards-tecnologia")
-    let deportivo = productos.filter(p => p.category === "deportivo")
+    let deportivo = productos.filter(p => p.category === "carne-pollo");
     productosFrontEnd(deportivo, "product-cards-deportivo")
 }
 
@@ -62,7 +62,7 @@ function organizar_categoria () {
     <div class="product-txt">
     <h3>${p.name}</h3>
     <p>${p.description}</p>
-    <p class="precio">$${p.price}</p>
+    <p class="precio">$${p.price.toLocaleString('es-CO')}</p>
     ${botonAgregar}
     </div>
     </div>`

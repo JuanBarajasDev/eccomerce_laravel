@@ -43,9 +43,9 @@ Dashboard product-manage
         <label for="category" class="fw-bold mb-2">selecciona tu categoria</label>
         <select name="category" class="form-control">
             <option value="">selecciona una categoria</option>
-            <option value="clasico">Clasico</option>
-            <option value="tecnologia">Teconologia</option>
-            <option value="deportivo">Deportivo</option>
+            <option value="carne-res">carne-res</option>
+            <option value="carne-pollo">carne-pollo</option>
+            <option value="carne-cerdo">carne-cerdo</option>
         </select>
         <button type="submit" class="btn btn-primary w-100 mt-4">Añadir Producto</button>
     </form>

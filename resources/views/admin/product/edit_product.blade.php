@@ -44,9 +44,9 @@ Dashboard product-manageEdit
         <label for="category" class="fw-bold mb-2">selecciona tu categoria</label>
         <select name="category" class="form-control">
             <option value="">selecciona una categoria</option>
-            <option value="clasico" {{$editProduct->category == 'clasico' ? 'selected' : ''}} >Clasico</option>
-            <option value="tecnologia" {{$editProduct->category == 'tecnologia' ? 'selected' : ''}}>Teconologia</option>
-            <option value="deportivo" {{$editProduct->category == 'deportivo' ? 'selected' : ''}}>Deportivo</option>
+            <option value="carne-res" {{$editProduct->category == 'carne-res' ? 'selected' : ''}} >carne-res</option>
+            <option value="carne-cerdo" {{$editProduct->category == 'carne-cerdo' ? 'selected' : ''}}>carne-cerdo</option>
+            <option value="carne-pollo" {{$editProduct->category == 'carne-pollo' ? 'selected' : ''}}>carne-pollo</option>
         </select>
         <button type="submit" class="btn btn-primary w-100 mt-4">Confirmar informacion</button>
     </form>

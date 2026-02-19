@@ -75,8 +75,8 @@
 						Histoy
 					</li>
 
-					<li class="sidebar-item {{request()->routeIs('settings')?'active': ''}}">
-						<a class="sidebar-link" href="{{route('settings')}}">
+					<li class="sidebar-item {{request()->routeIs('order.history')?'active': ''}}">
+						<a class="sidebar-link" href="{{route('order.history')}}">
               <i class="align-middle" data-feather="user"></i> <span class="align-middle">Settings</span>
             </a>
 					</li>
