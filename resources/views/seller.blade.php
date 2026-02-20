@@ -5,8 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CarniClick - Carnes Premium</title>
-    <link rel="icon" type="image/x-icon" href="../images/icon-carniceria.png"> 
-    
+    <link rel="icon" type="image/x-icon" href="../images/icon-carniceria.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5qL8uX9Gk+w0+Q2V+p2I2J10p/3pQO4K9ZlW2/g1yL5fB0gN0b7zD8mJ3j+sD7mG2zQ9v1/A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -198,8 +197,8 @@
                 <h3>Contáctanos</h3>
                 <ul>
                     <li><strong>Nombre:</strong> Soporte tecnico</li>
-                    <li><strong>Correo:</strong> <a href="mailto:breniksantiago@gmail.com">breniksantiago@gmail.com</a></li>
-                    <li><strong>Teléfono:</strong> +57 3008650927</li>
+                    <li><strong>Correo:</strong> <a>#########</a></li>
+                    <li><strong>Teléfono:</strong> +57 ######</li>
                     <li><strong>Ubicación:</strong> Bogota Colombia</li>
                 </ul>
             </div>
