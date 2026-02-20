@@ -117,11 +117,194 @@ img{
 .navbar{
     padding-right: 60px;
 }
+/* --- INICIO DE CAMBIOS EXCLUSIVOS DEL CARRITO --- */
+
+/* Estilo para el icono de la bolsa */
+.submenu i {
+    font-size: 25px;
+    cursor: pointer;
+    color: #3D2B1F; /* Color oscuro para el icono */
+    transition: color 0.3s ease;
+}
+.submenu i:hover {
+    color: #B22222; /* Rojo al hacer hover */
+}
+
+/* Contenedor del carrito */
+.submenu #carrito{
+    display: none; /* Oculto por defecto */
+    position: absolute;
+    right: 0;
+    top: 100%; /* Justo debajo del icono */
+    z-index: 1001; /* Asegura que esté por encima de otros elementos */
+    /* Diseño compacto y llamativo */
+    background-color: rgba(78, 52, 46, 0.95); /* Fondo marrón oscuro semi-transparente */
+    padding: 15px 20px; /* Padding reducido para hacerlo más compacto */
+    min-width: 380px; /* Ancho mínimo para mantener legible la tabla */
+    max-height: 450px; /* Altura máxima para hacerlo compacto */
+    overflow-y: auto; /* Scroll si hay muchos productos */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4); /* Sombra para que "resalte" */
+    backdrop-filter: blur(5px); /* Efecto de desenfoque sutil */
+    transform-origin: top right;
+    transition: all 0.3s ease-in-out; /* Transición para la aparición */
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+/* Mostrar carrito al hacer hover (para desktop) */
+.submenu:hover #carrito {
+    display: block;
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Clase para mostrar el carrito con JavaScript (toggleCarrito) */
+#carrito.visible {
+    display: block;
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Estilos de la tabla del carrito */
+#carrito table{
+    width: 100%;
+    border-collapse: collapse; /* Bordes de celdas pegados */
+}
+
+#lista-carrito th, #lista-carrito td {
+    color: #fff9f9; /* Texto claro para contraste con el fondo oscuro */
+    text-align: center;
+    vertical-align: middle;
+    padding: 8px 5px; /* Padding ajustado para compacidad */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Separador sutil */
+    font-size: 13px; /* Fuente más pequeña para ahorrar espacio */
+}
+
+#lista-carrito th {
+    font-weight: 600; /* Seminegrita para encabezados */
+    text-transform: uppercase;
+    font-size: 11px; /* Más pequeño para encabezados */
+    padding-bottom: 10px;
+}
+
+/* Columnas específicas para ancho */
+#lista-carrito th:nth-child(1), #lista-carrito td:nth-child(1) { width: 50px; } /* Imagen */
+#lista-carrito th:nth-child(3), #lista-carrito td:nth-child(3) { width: 100px; } /* Peso */
+#lista-carrito th:nth-child(4), #lista-carrito td:nth-child(4) { width: 80px; } /* Marmoleo */
+#lista-carrito th:nth-child(5), #lista-carrito td:nth-child(5) { width: 80px; } /* Maduración */
+#lista-carrito th:nth-child(6), #lista-carrito td:nth-child(6) { width: 70px; } /* Precio */
+#lista-carrito th:nth-child(7), #lista-carrito td:nth-child(7) { width: 100px; } /* Cantidad */
+#lista-carrito th:nth-child(8), #lista-carrito td:nth-child(8) { width: 30px; } /* Botón X */
+
+
+/* Imágenes en el carrito */
+#lista-carrito img {
+    width: 40px; /* Tamaño de imagen más pequeño */
+    height: 40px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* Inputs y Selects dentro del carrito */
+#lista-carrito input[type="number"], 
+#lista-carrito select {
+    background-color: #5a4038; /* Fondo más oscuro para inputs */
+    color: #F5F2E9; /* Texto claro */
+    border: 1px solid #7c6258; /* Borde más suave */
+    padding: 3px;
+    font-size: 12px;
+    height: auto; /* Eliminar altura fija si la hay */
+    line-height: normal; /* Alinear texto en el centro */
+}
+#lista-carrito input[type="number"] {
+    width: 45px; /* Ancho fijo para el input de peso */
+    text-align: center;
+}
+#lista-carrito select {
+    width: 50px; /* Ancho fijo para el select de unidad */
+}
+
+
+/* Controles de Cantidad */
+.cantidad {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px; /* Espacio reducido entre elementos */
+    white-space: nowrap;
+    margin: 0; /* Asegurar que no haya márgenes externos */
+}
+.cantidad i {
+    font-size: 14px; /* Tamaño más pequeño para los iconos */
+    cursor: pointer;
+    color: #B22222; /* Rojo llamativo para los iconos +/- */
+    transition: color 0.2s;
+}
+.cantidad i:hover {
+    color: #FF4500; /* Rojo más brillante al hacer hover */
+}
+.cantidad p {
+    color: #FFFFFF;
+    font-weight: 500;
+    margin: 0 3px; /* Espacio alrededor del número */
+    font-size: 13px; /* Tamaño de fuente para el contador */
+}
+
+/* Botonera (Vaciar Cesta y Pagar) */
 .botonera {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    margin-top: 15px; /* Espacio superior */
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Separador */
 }
+
+/* Botón de borrar producto (la "X") */
+.borrar {
+    background-color: #B22222;
+    border-radius: 50%;
+    width: 22px; /* Tamaño más pequeño para la "X" */
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px; /* Tamaño de la "X" */
+    font-weight: 800;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    line-height: 1; /* Para centrar la X */
+}
+.borrar:hover {
+    background-color: #8B0000;
+}
+
+/* Estilo para productos sin stock en el carrito */
+.producto-sin-stock td {
+    background-color: rgba(178, 34, 34, 0.2); /* Fondo ligeramente rojo para indicar sin stock */
+    opacity: 0.7; /* Ligeramente transparente */
+}
+.producto-sin-stock td:last-child {
+    background-color: transparent; /* No aplicar fondo al botón de borrar */
+}
+.producto-sin-stock .cantidad i {
+    color: #a0a0a0; /* Iconos deshabilitados */
+    cursor: not-allowed;
+}
+.producto-sin-stock .cantidad p {
+    color: #a0a0a0;
+}
+.producto-sin-stock input, .producto-sin-stock select {
+    pointer-events: none; /* Deshabilitar interacción con inputs */
+    background-color: #6d5b5b;
+    color: #c0c0c0;
+}
+
+
+/* --- FIN DE CAMBIOS EXCLUSIVOS DEL CARRITO --- */
+
 
 #menu{
     display: none;
@@ -139,25 +322,24 @@ img{
     padding-right: 40px;
 }
 
-.submenu #carrito{
+/* .submenu #carrito{
     display: none;
-} 
+} */ /* MOVÍ ESTO ARRIBA Y LO REEMPLACÉ */
 
-.submenu:hover #carrito {
+/* .submenu:hover #carrito {
     display: block;
     position: absolute;
     right: 0;
     backdrop-filter: blur(10px);
     top: 100%;
     z-index: 1;
-    /* CAMBIO: Fondo del carrito a un marrón oscuro semi-transparente. */
     background-color: rgba(78, 52, 46, 0.85);
     padding: 30px;
     min-width: 400px;
     max-height: 550px;
     overflow: auto;
     border-radius: 0 0 8px 8px;
-}
+} */ /* ESTO FUE REEMPLAZADO POR LOS ESTILOS DEL CARRITO ARRIBA */
 
 td.cantidad {
     width: 100%;
@@ -165,21 +347,21 @@ td.cantidad {
     text-align: center;
 }
 
-.cantidad {
+/* .cantidad {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
     width: 100%;
     white-space: nowrap;
-}
+} */ /* ESTO FUE REEMPLAZADO POR LOS ESTILOS DEL CARRITO ARRIBA */
 
-.cantidad i {
+/* .cantidad i {
     font-size: 16px;
     cursor: pointer;
-}
+} */ /* ESTO FUE REEMPLAZADO POR LOS ESTILOS DEL CARRITO ARRIBA */
 
-.cantidad p {
+/* .cantidad p {
     margin: 0;
     min-width: 10px;
     text-align: center;
@@ -188,18 +370,19 @@ td.cantidad {
 }
 .cantidad {
     margin-top: 20px;
-}
+} */ /* ESTO FUE REEMPLAZADO POR LOS ESTILOS DEL CARRITO ARRIBA */
+
 td.cantidad {
     padding-top: 8px;
 }
  
-#lista-carrito th, #lista-carrito td {
+/* #lista-carrito th, #lista-carrito td {
     text-align: center;
     vertical-align: middle;
     padding-left: 10px;
-}
+} */ /* ESTO FUE REEMPLAZADO POR LOS ESTILOS DEL CARRITO ARRIBA */
 
-/* CAMBIO: Color de botones a rojo intenso. */
+/* CAMBIO: Botón de borrar a rojo intenso. */
 button {
     transform: none;
     box-shadow: none;
@@ -233,12 +416,13 @@ button:hover {
     border-radius: 5px;
     font-size: 15px; 
 }
-#carrito table{
+/* #carrito table{
     width: 100%;
-}
-th, td{
+} */ /* ESTO FUE REEMPLAZADO POR LOS ESTILOS DEL CARRITO ARRIBA */
+
+/* th, td{
     color: #fff9f9;
-}
+} */ /* ESTO FUE REEMPLAZADO POR LOS ESTILOS DEL CARRITO ARRIBA */
 
 .product-content{
     display: flex;
@@ -300,7 +484,7 @@ th, td{
 }
 input {
     border-radius: 4px; 
-    border: 1px solid #9e9e9e;   
+    border: 1px solid #9e9e9e;   
 }
 
 /* CAMBIO: Botón de borrar a rojo intenso. */
@@ -536,11 +720,12 @@ footer{
     margin-bottom: 10px;
 }
 
-.submenu i {
+/* .submenu i {
     font-size: 25px;
     cursor: pointer;
     color: #3D2B1F;
-}
+} */ /* ESTO FUE REEMPLAZADO POR LOS ESTILOS DEL CARRITO ARRIBA */
+
 .menu label {
     color: #3D2B1F;
     font-size: 25px;
@@ -615,30 +800,62 @@ footer{
     .submenu{
         padding-right: 10px;
     }
-    .submenu:hover #carrito {
+    /* Comportamiento del carrito en móvil */
+    #carrito.visible, .submenu:hover #carrito { /* Aplica a .visible y hover */
         position: fixed;
-        top: 60px;
+        top: 60px; /* Ajusta esto a la altura de tu barra de navegación móvil */
         left: 0;
         right: 0;
         width: 100%;
-        height: auto;
+        min-width: unset; /* Elimina el min-width para móviles */
         max-height: 80vh;
-        padding: 20px;
+        padding: 15px;
         overflow-y: auto;
         z-index: 1000;
         box-sizing: border-box;
+        border-radius: 0; /* Sin bordes redondeados en móvil */
+        transform: scale(1); /* Sin animación de escala */
+        opacity: 1; /* Completamente visible */
     }
-   .remover-nombre {
-       display: none;
-   }
+    
+    /* Para pantallas móviles, ocultar columnas para hacerlo más compacto */
+    .remover-nombre {
+        display: none;
+    }
+    #lista-carrito th:nth-child(2), /* Corte */
+    #lista-carrito td:nth-child(2) {
+        display: none;
+    }
+    /* Ajustar tamaño de inputs y selects en móvil */
+    #lista-carrito input[type="number"] {
+        width: 40px;
+    }
+    #lista-carrito select {
+        width: 45px;
+    }
+    #lista-carrito th, #lista-carrito td {
+        padding: 6px 3px; /* Más compacto aún */
+        font-size: 11px;
+    }
+    #lista-carrito img {
+        width: 30px;
+        height: 30px;
+    }
+    .cantidad i {
+        font-size: 12px;
+    }
+    .cantidad p {
+        font-size: 11px;
+    }
+    .borrar {
+        width: 18px;
+        height: 18px;
+        font-size: 9px;
+    }
 
-   #carrito.activo {
-       display: block;
-   }
-   .form-group {
-       display: flex;
-       flex-direction: column;
-   }
+    #carrito table{
+        width: 100%;
+    }
 
     .header-content{
         padding: 50px 0;
@@ -710,11 +927,6 @@ footer{
         width: 80px;
         padding-right: 12px;
     }
-
-
-
-
-
 
     #contacto{
     font-size: 16px;

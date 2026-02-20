@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GogoShop - Checkout</title>
-    <link rel="icon" type="image/x-icon" href="../images/iconGOGO.png">
+    <title>CarniClick - Checkout</title>
+    <link rel="icon" type="image/x-icon" href="../images/logo.png">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <link rel="stylesheet" href="{{asset('css/payment.css')}}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -13,13 +12,13 @@
 <body>
     
 <div class="product-content">
-   
+    
     <div class="order">
         
         <div class="order-address-container">
             
             <img src="../images/logo.png" id="logo-orden" alt="Logo">
-               
+                
             <h2>Proceso de Compra</h2>
             
             <div class="order-address">
@@ -27,9 +26,9 @@
             
                 <input id="id" type="hidden">
                 <input id="id_usuario" type="hidden">
-                           
+                                
                         <div class="form-group">
-                    <label for="country">País:</label>
+                            <label for="country">País:</label>
                             <select id="country" name="country" required>
                                 <option value="">Selecciona un país</option>
                             </select>
@@ -37,31 +36,31 @@
 
                         <div class="form-group">
                             <label for="name">Nombre completo:</label>
-                    <input type="text" name="name" id="name" required placeholder="Tu nombre y apellido">
+                            <input type="text" name="name" id="name" required placeholder="Tu nombre y apellido">
                         </div>
 
                         <div class="form-group">
-                    <label for="email">Correo Electrónico:</label>
-                    <input type="email" name="email" id="email" required placeholder="ejemplo@correo.com">
+                            <label for="email">Correo Electrónico:</label>
+                            <input type="email" name="email" id="email" required placeholder="ejemplo@correo.com">
                         </div>
 
                         <div class="form-group">
-                    <label for="numberPhone">Número de teléfono:</label>
-                    <input type="number" name="numberPhone" id="numberPhone" required placeholder="Ej: 300 123 4567">
+                            <label for="numberPhone">Número de teléfono:</label>
+                            <input type="number" name="numberPhone" id="numberPhone" required placeholder="Ej: 300 123 4567">
                         </div>
                 
                         <div class="form-group">
-                    <label for="addressLine">Dirección (Calle y Número):</label>
-                    <input type="text" name="addressLine" id="addressLine" required placeholder="Avenida Siempre Viva 742">
+                            <label for="addressLine">Dirección (Calle y Número):</label>
+                            <input type="text" name="addressLine" id="addressLine" required placeholder="Avenida Siempre Viva 742">
                         </div>
 
                         <div class="form-group">
                             <label for="Apto">Apto, suite, unidad, etc. (opcional):</label >
-                    <input type="text" name="apto" id="apto" placeholder="Bloque 5, Apto 201">
+                            <input type="text" name="apto" id="apto" placeholder="Bloque 5, Apto 201">
                         </div>
                         
                         <div class="form-group">
-                    <label for="department">Departamento/Estado:</label>
+                            <label for="department">Departamento/Estado:</label>
                             <select id="department" name="department" required>
                                 <option value="">Selecciona un departamento</option>
                             </select>
@@ -70,15 +69,15 @@
                         <div class="form-group">
                             <label for="city">Ciudad:</label>
                             <select id="city" name="city" required>
-                        <option value="">Selecciona una ciudad</option>
+                                <option value="">Selecciona una ciudad</option>
                             </select>
                         </div>
 
                         <div class="form-group">
-                    <label for="postalCode">Código postal:</label>
-                    <input type="number" name="postalCode" id="postalCode" placeholder="050010">
-                       </div>
-                    
+                            <label for="postalCode">Código postal:</label>
+                            <input type="number" name="postalCode" id="postalCode" placeholder="050010">
+                        </div>
+                        
                 <div id="control_direccion">
                     </div>
 
@@ -95,8 +94,11 @@
             <table class="order-table" id="order-table">
                 <thead>
                     <tr>
-                        <th style="width: 70%">Producto</th>
-                        <th style="width: 30%; text-align: right;">Cant./Precio</th>
+                        <th style="width: 25%">Corte</th>
+                        <th style="width: 20%">Peso/Uni.</th>
+                        <th style="width: 15%">Marmoleo</th>
+                        <th style="width: 15%">Maduración</th>
+                        <th style="width: 25%; text-align: right;">Subtotal</th>
                     </tr>
                 </thead>
                 <tbody>
